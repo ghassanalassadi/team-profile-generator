@@ -7,7 +7,7 @@ const generateHTML = require('./src/generateHTML');
 // calling js libraries
 const fs = require('fs');
 
-
+employeeArray = [];
 // runs the application
 function runApp() {
     generateTeam().then((userInput) => {
@@ -120,5 +120,7 @@ function generateTeam() {
 // calls the 'generateHTML' file to generate the website
 function generateWebsite() {
     console.log('Generating webpage...');
-    fs.writeFileSync()
+    fs.writeFileSync('./dist/index.html', generateTeam(employeeArray), 'utf-8');
 }
+
+runApp();
