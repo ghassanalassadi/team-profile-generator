@@ -1,13 +1,15 @@
 // generates the team card for the manager based on user input
 function generateManagerCard(manager) {
-    const managerCard = `<div class="card">
+    const managerCard = `<div class="card bg-success text-white" style="width: 250px">
             <div class="card-body">
-                <h5 class="card-title">${manager.getName()}</h5>
-                <h6>${manager.getRole()}</h6>
+                <div class="card-header bg-success text-white">
+                    <h3 class="card-title">${manager.getName()}</h5>
+                    <h4>${manager.getRole()}</h6>
+                </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">ID: ${manager.getID()}</li>
-                    <li class="list-group-item">Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
-                    <li class="list-group-item">Office Number: ${manager.getOfficeNumber()}</li>
+                    <li class="list-group-item text-bg-secondary">ID: ${manager.getID()}</li>
+                    <li class="list-group-item text-bg-light">Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
+                    <li class="list-group-item text-bg-secondary">Office Number: ${manager.getOfficeNumber()}</li>
                 </ul>
             </div>
         </div>`;
@@ -16,14 +18,16 @@ function generateManagerCard(manager) {
 
 // generates the team card for the engineer based on user input
 function generateEngineerCard(engineer) {
-    const engineerCard = `<div class="card">
+    const engineerCard = `<div class="card bg-success text-white" style="width: 250px">
             <div class="card-body">
-                <h5 class="card-title">${engineer.getName()}</h5>
-                <h6>${engineer.getRole()}</h6>
+            <div class="card-header bg-success text-white">
+                <h3 class="card-title">${engineer.getName()}</h5>
+                <h4>${engineer.getRole()}</h6>
+            </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">ID: ${engineer.getID()}</li>
-                    <li class="list-group-item">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
-                    <li class="list-group-item">Github: <a href="https://github.com/${engineer.getGithub()}" target="_blank">${engineer.getGithub()}</a></li>
+                    <li class="list-group-item text-bg-secondary">ID: ${engineer.getID()}</li>
+                    <li class="list-group-item text-bg-light">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
+                    <li class="list-group-item text-bg-secondary">Github: <a href="https://github.com/${engineer.getGithub()}" target="_blank">${engineer.getGithub()}</a></li>
                 </ul>
             </div>
         </div>`;
@@ -32,14 +36,16 @@ function generateEngineerCard(engineer) {
 
 // generates the team card for the intern based on user input
 function generateInternCard(intern) {
-        const internCard = `<div class="card">
+        const internCard = `<div class="card bg-success text-white" style="width: 250px">
             <div class="card-body">
-                <h5 class="card-title">${intern.getName()}</h5>
-                <h6>${intern.getRole()}</h6>
+            <div class="card-header bg-success text-white">
+                <h3 class="card-title">${intern.getName()}</h5>
+                <h4>${intern.getRole()}</h6>
+            </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">ID: ${intern.getID()}</li>
-                    <li class="list-group-item">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</li>
-                    <li class="list-group-item">School: ${intern.getSchool()}</li>
+                    <li class="list-group-item text-bg-secondary">ID: ${intern.getID()}</li>
+                    <li class="list-group-item text-bg-light">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
+                    <li class="list-group-item text-bg-secondary">School: ${intern.getSchool()}</li>
                 </ul>
             </div>
         </div>`;
@@ -83,7 +89,7 @@ function generateHTML(page) {
         <div class="jumbotron bg-success text-white" style="height: 100px">
             <h1 class="display-4 text-center">My Team</h1>
         </div>
-        <div class="card-deck mt-5 d-flex flex-row justify-content-between align-items-center">
+        <div class="card-deck mt-5 d-flex flex-row justify-content-around align-items-center">
             ${renderer(page)}
         </div>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
