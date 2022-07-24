@@ -2,5 +2,26 @@
   "dependencies": {
     "inquirer": "^8.2.4",
     "jest": "^28.1.3"
-  }
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "name": "team-profile-generator",
+  "description": "generates team profiles on html",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ghassanalassadi/team-profile-generator.git"
+  },
+  "author": "ghassanalassadi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ghassanalassadi/team-profile-generator/issues"
+  },
+  "homepage": "https://github.com/ghassanalassadi/team-profile-generator#readme"
 }

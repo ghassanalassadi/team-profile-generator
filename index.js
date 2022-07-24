@@ -1,33 +1,17 @@
 // calling classes and js files
-const Manager = require('./lib/Manager');
-const Engineer = require('./lib/Engineer');
-const Intern = require('./lib/Intern');
-const generateHTML = require('./src/generateHTML');
+const Manager = require('./lib/Manager.js');
+const Engineer = require('./lib/Engineer.js');
+const Intern = require('./lib/Intern.js');
+const generateHTML = require('./src/generateHTML.js');
 
 // calling js libraries
 const fs = require('fs');
+const inquirer = require('inquirer');
 
-employeeArray = [];
+const employeeArray = [];
 // runs the application
 function runApp() {
-    generateTeam().then((userInput) => {
-        switch(userInput.employeeRoleQuestion) {
-            case 'Manager':
-                addManager();
-                break;
-            case 'Engineer':
-                addEngineer();
-                break;
-            case 'Intern':
-                addIntern();
-                break;
-            case 'None':
-                generateWebsite();
-                break;
-            default:
-                generateWebsite();
-        }
-    })
+    generateTeam();
 }
 
 function addManager() {
@@ -53,6 +37,11 @@ function addManager() {
             message: "Enter the manager's office number"
         }
     ]
+    inquirer.prompt(managerQuestions).then((response) => {
+        const manager = new Manager(response.managerName, response.managerID, response.managerEmail, response.managerOfficeNumber);
+        employeeArray.push(manager);
+        generateTeam();
+    })
 }
 
 function addEngineer() {
@@ -78,6 +67,11 @@ function addEngineer() {
             message: "Enter the engineer's github username"
         }
     ]
+    inquirer.prompt(engineerQuestions).then((response) => {
+        const engineer = new Engineer(response.engineerName, response.engineerID, response.engineerEmail, response.engineerGithub);
+        employeeArray.push(engineer);
+        generateTeam();
+    })
 }
 
 function addIntern() {
@@ -103,6 +97,11 @@ function addIntern() {
             message: "Enter the name of the school the intern attends"
         }
     ]
+    inquirer.prompt(internQuestions).then((response) => {
+        const intern = new Intern(response.internName, response.internID, response.internEmail, response.internSchool);
+        employeeArray.push(intern);
+        generateTeam();
+    })
 }
 
 // generates team
@@ -115,12 +114,31 @@ function generateTeam() {
             choices: ['Manager', 'Engineer', 'Intern', 'None']
         }
     ]
+    inquirer.prompt(employeeRoleQuestion).then((userInput) => {
+        switch(userInput.employeeRole) {
+            case 'Manager':
+                addManager();
+                break;
+            case 'Engineer':
+                addEngineer();
+                break;
+            case 'Intern':
+                addIntern();
+                break;
+            case 'None':
+                generateWebsite();
+                break;
+            default:
+                generateWebsite();
+        }
+    })
 }
 
 // calls the 'generateHTML' file to generate the website
 function generateWebsite() {
     console.log('Generating webpage...');
-    fs.writeFileSync('./dist/index.html', generateTeam(employeeArray), 'utf-8');
+    // console.log(employeeArray);
+    fs.writeFileSync('./dist/index.html', generateHTML(employeeArray), 'utf-8');
 }
 
 runApp();
