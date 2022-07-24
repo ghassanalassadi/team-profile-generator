@@ -19,3 +19,6 @@ To use this application, open your preferred command line application, navigate 
 ## Demo
 <img src="./assets/demoGIF.gif">
 You can also view the demo in video form <a href='https://watch.screencastify.com/v/j12k30Un3pwOC2DjpCfc'>here</a>.
+
+Here is a sample image of what will show once all desired data has been entered:
+<img src="./assets/image.png">
