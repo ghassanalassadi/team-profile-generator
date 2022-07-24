@@ -7,6 +7,7 @@
   - [Demo](#demo)
 
 ## Description
+This application is an HTML generator that collets data from the command line. The data it collects relates to the programming team of the user. It will prompt the user with a series of questions, the responses of which can be used to create a webpage.
 
 ## Installation
 To install this application, simply download the repository using your desired method:
