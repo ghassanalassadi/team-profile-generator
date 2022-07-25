@@ -7,6 +7,7 @@
   - [Demo](#demo)
 
 ## Description
+This application is an HTML generator that collets data from the command line. The data it collects relates to the programming team of the user. It will prompt the user with a series of questions, the responses of which can be used to create a webpage.
 
 ## Installation
 To install this application, simply download the repository using your desired method:
@@ -19,3 +20,6 @@ To use this application, open your preferred command line application, navigate 
 ## Demo
 <img src="./assets/demoGIF.gif">
 You can also view the demo in video form <a href='https://watch.screencastify.com/v/j12k30Un3pwOC2DjpCfc'>here</a>.
+
+Here is a sample image of what will show once all desired data has been entered:
+<img src="./assets/image.png">
